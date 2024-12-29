@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myapp/features/daily_news/presentation/bloc/remote/bloc/remote_article_bloc.dart';
+import 'package:myapp/features/daily_news/presentation/widgets/article_tile.dart';
 
 class DailyNews extends StatelessWidget {
   const DailyNews({super.key});
@@ -37,9 +38,9 @@ class DailyNews extends StatelessWidget {
 
       if (state is RemoteArticlesSuccessState) {
         return ListView.builder(
-            itemCount: state.article.length,
+            itemCount: 20,
             itemBuilder: (ctx, item) {
-              return ListTile(title: Text("${item}"),);
+              return ArticleTile(article: state.article[item]);
             });
       }
 

@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       create: (context) => sl<RemoteArticleBloc>()..add(const GetArticleEvent()),
       child: MaterialApp(
         theme: theme(),
-        home: DailyNews(),
+        home: const DailyNews(),
       ),
     );
   }
